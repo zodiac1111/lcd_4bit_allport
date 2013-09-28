@@ -35,7 +35,8 @@ int main(void)
 	//3. 自定义字符测试 (写内存+读内存)
 	init_chardb();     //初始化自定义的字符集
 	set_pos(0x40);     //设置在第2行还是显示
-	for (int i = 0; i<0b111+1; i++) {
+	int i;
+	for ( i =0; i<0b111+1; i++) {
 		set_data(i);
 		//_delay_ms(50);
 	}
@@ -46,7 +47,7 @@ int main(void)
 	ch=get_pos();
 	sprintf(str,"I=%02XH",ch);
 	write_str(str);
-
+	return 0;
 }
 /**
  * 初始化LCD.
